@@ -3,7 +3,7 @@ package repo
 import (
 	"fmt"
 
-	"github.com/kayalardanmehmet/wordtagapi/model"
+	"github.com/kayalardanmehmet/go-api-boilerplate/model"
 )
 
 var currentId int

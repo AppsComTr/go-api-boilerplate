@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	"github.com/kayalardanmehmet/wordtagapi/handler"
-	"github.com/kayalardanmehmet/wordtagapi/middleware"
+	"github.com/kayalardanmehmet/go-api-boilerplate/handler"
+	"github.com/kayalardanmehmet/go-api-boilerplate/middleware"
 )
 
 type Route struct {
@@ -26,6 +26,13 @@ var routes = Routes{
 		[]middleware.MiddlewareFunc{
 			middleware.AuthMiddleware,
 		},
+	},
+	Route{
+		"Login",
+		"POST",
+		"/login",
+		handler.LoginHandler,
+		nil,
 	},
 	Route{
 		"TodoIndex",

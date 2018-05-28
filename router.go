@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
-	"github.com/kayalardanmehmet/wordtagapi/middleware"
+	"github.com/kayalardanmehmet/go-api-boilerplate/middleware"
 )
 
 func NewRouter() *mux.Router {

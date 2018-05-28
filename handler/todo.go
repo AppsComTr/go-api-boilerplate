@@ -9,9 +9,9 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"github.com/kayalardanmehmet/wordtagapi/cerror"
-	"github.com/kayalardanmehmet/wordtagapi/model"
-	"github.com/kayalardanmehmet/wordtagapi/repo"
+	"github.com/kayalardanmehmet/go-api-boilerplate/cerror"
+	"github.com/kayalardanmehmet/go-api-boilerplate/model"
+	"github.com/kayalardanmehmet/go-api-boilerplate/repo"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
