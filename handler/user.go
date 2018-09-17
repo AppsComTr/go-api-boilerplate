@@ -1,9 +1,6 @@
 package handler
 
 import (
-	"encoding/json"
-	"io"
-	"io/ioutil"
 	"net/http"
 	"time"
 
@@ -22,15 +19,9 @@ type loginResponse struct {
 
 func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	var loginReq loginRequest
-	body, err := ioutil.ReadAll(io.LimitReader(r.Body, 1048576))
+	err, msg := util.ParseRequestBody(r.Body, &loginReq)
 	if err != nil {
-		panic(err)
-	}
-	if err := r.Body.Close(); err != nil {
-		panic(err)
-	}
-	if err := json.Unmarshal(body, &loginReq); err != nil {
-		util.SendJSONResponse(w, util.ErrResponse{Message: "Request body parse edilemedi, veri doğru değil"}, http.StatusBadRequest)
+		util.SendJSONResponse(w, util.ErrResponse{Message: msg}, http.StatusBadRequest)
 		return
 	}
 
